@@ -1,6 +1,7 @@
 ﻿using MATTILibrary;
 using System.Net;
 using System.Net.Sockets;
+using System.Text.Json;
 
 internal class Program
 {
@@ -25,13 +26,11 @@ internal class Program
             //var message = Console.ReadLine();
             //writer.WriteLine(message);
 
-            Message<Move> clientMessage = new Message<Move>(), new Move(1,1);
-            string jsonMessage = clientMessage.ToJson();
-            writer.WriteLine(jsonMessage);
+            Message<AskForConnection> clientMessage = new Message<AskForConnection>(MessageType.AskForConnection,new AskForConnection("Daniele"));
+            writer.WriteLine(JsonSerializer.Serialize(clientMessage));
 
             var responseMessage = reader.ReadLine();
             Console.WriteLine("Message from server: " + responseMessage);
-
             Console.ReadLine();
         }
 
