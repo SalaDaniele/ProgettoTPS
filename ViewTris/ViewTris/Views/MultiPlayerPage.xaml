@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewTris.Views.MultiPlayerPage"
+             NavigationPage.HasNavigationBar="False"
+             Background="black">
+    <StackLayout Padding="20">
+        <Grid VerticalOptions="CenterAndExpand"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170" />
+                <RowDefinition Height="170" />
+                <RowDefinition Height="170" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Bottoni della griglia del Tris -->
+            <Button x:Name="c00" Grid.Row="0" Grid.Column="0" Clicked="CellClicked" 
+                    Background="white" />
+            <Button x:Name="c01" Grid.Row="0" Grid.Column="1" Clicked="CellClicked" 
+                    Background="white"/>
+            <Button x:Name="c02" Grid.Row="0" Grid.Column="2" Clicked="CellClicked" 
+                    Background="white"/>
+
+            <Button x:Name="c10" Grid.Row="1" Grid.Column="0" Clicked="CellClicked" 
+                    Background="white" />
+            <Button x:Name="c11" Grid.Row="1" Grid.Column="1" Clicked="CellClicked" 
+                    Background="white" />
+            <Button x:Name="c12" Grid.Row="1" Grid.Column="2" Clicked="CellClicked" 
+                    Background="white" />
+
+            <Button x:Name="c20" Grid.Row="2" Grid.Column="0" Clicked="CellClicked" 
+                    Background="white" />
+            <Button x:Name="c21" Grid.Row="2" Grid.Column="1" Clicked="CellClicked" 
+                    Background="white" />
+            <Button x:Name="c22" Grid.Row="2" Grid.Column="2" Clicked="CellClicked"
+                    Background="white" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

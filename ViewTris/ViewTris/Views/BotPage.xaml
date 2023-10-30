@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewTris.Views.BotPage"
+             NavigationPage.HasNavigationBar="False"
+             Background="black"
+             >
+    <!--<StackLayout Padding="20">
+        <Grid VerticalOptions="CenterAndExpand"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170" />
+                <RowDefinition Height="170" />
+                <RowDefinition Height="170" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            -->
+    <!-- Bottoni della griglia del Tris -->
+    <!--
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c00" Grid.Row="0" Grid.Column="0" Clicked="CellClicked" 
+                    Background="white" />
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c01" Grid.Row="0" Grid.Column="1" Clicked="CellClicked" 
+                    Background="white"/>
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c02" Grid.Row="0" Grid.Column="2" Clicked="CellClicked" 
+                    Background="white"/>
+
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c10" Grid.Row="1" Grid.Column="0" Clicked="CellClicked" 
+                    Background="white" />
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c11" Grid.Row="1" Grid.Column="1" Clicked="CellClicked" 
+                    Background="white" />
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c12" Grid.Row="1" Grid.Column="2" Clicked="CellClicked" 
+                    Background="white" />
+
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c20" Grid.Row="2" Grid.Column="0" Clicked="CellClicked" 
+                    Background="white" />
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c21" Grid.Row="2" Grid.Column="1" Clicked="CellClicked" 
+                    Background="white" />
+            <Button WidthRequest="170" Margin="1" HeightRequest="170" x:Name="c22" Grid.Row="2" Grid.Column="2" Clicked="CellClicked"
+                    Background="white" />
+        </Grid>
+    </StackLayout>-->
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+        <Frame BackgroundColor="Blue" WidthRequest="500" HeightRequest="500"
+               BorderColor="White" >
+            <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c00" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c01" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c02" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c11" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c12" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c21" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Button CornerRadius="0" WidthRequest="100" HeightRequest="100" BorderColor="Red" BorderWidth="3" Clicked="CellClicked" x:Name="c22" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

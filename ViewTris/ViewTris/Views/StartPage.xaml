@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewTris.Views.StartPage"
+             NavigationPage.HasNavigationBar="False"   >
+    <VerticalStackLayout>
+        <Button Text="MULTIPLAYER"
+                BackgroundColor="Black"
+                VerticalOptions="CenterAndExpand" 
+                WidthRequest="10000"
+                HeightRequest="325"
+                FontSize="75"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand" Clicked="Button_Clicked"></Button>
+        <Button Text="SINGLEPLAYER"
+                TextColor="Black" 
+                BackgroundColor="White"
+                VerticalOptions="Fill"
+                WidthRequest="10000"
+                HeightRequest="325"
+                FontSize="75"
+                FontAttributes="Bold"
+                HorizontalOptions="Fill" Clicked="BotClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
