@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\client_tetris\client_tetris.csproj" />
-  </ItemGroup>
-
 </Project>
