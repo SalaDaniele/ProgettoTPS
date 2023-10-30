@@ -8,7 +8,7 @@ public enum MessageType
     AskForConnection,
     FinishGame,
     StartGame,
-    AnserForConnection,
+    AnswerForConnection,
     GameInterrupted,
     Update
 }
