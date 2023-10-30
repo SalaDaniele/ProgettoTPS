@@ -25,7 +25,7 @@ internal class Program
             //var message = Console.ReadLine();
             //writer.WriteLine(message);
 
-            Message clientMessage = new Message("MOVE", "1 1");
+            Message<Move> clientMessage = new Message<Move>(), new Move(1,1);
             string jsonMessage = clientMessage.ToJson();
             writer.WriteLine(jsonMessage);
 
