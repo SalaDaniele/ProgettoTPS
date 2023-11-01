@@ -12,12 +12,14 @@ class Server
     private TcpListener listener;
     private List<Player> players;
     private Game game;
+    private bool gameStarted;
 
     public Server()
     {
         listener = new TcpListener(IPAddress.Any, 8888);
         players = new List<Player>();
         game = new Game();
+        gameStarted = false;
 
         listener.Start();
         Console.WriteLine("Server is running. Waiting for players to connect...");
@@ -32,6 +34,7 @@ class Server
 
             Thread playerThread = new Thread(player.HandleClient);
             playerThread.Start();
+            if (players.Count == 2 && !gameStarted) StartGame();
         }
     }
 

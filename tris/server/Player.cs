@@ -11,9 +11,11 @@ class Player
     private int playerId;
     private string playerName;
     private Game game;
+    public int PlayerId { get; private set; }
 
     public Player(TcpClient client, int playerId, Game game)
     {
+
         this.client = client;
         this.stream = client.GetStream();
         this.playerId = playerId;
@@ -146,17 +148,22 @@ class Player
             while (true)
             {
                 // Receive the move from the current player
+                //Console.WriteLine("Move Received");
                 bytesRead = stream.Read(buffer, 0, buffer.Length);
                 string playerMove = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-
+                Console.WriteLine("Player Move");
+                Console.WriteLine(playerMove);
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
                 // Print the received move to the server console
                 Console.WriteLine($"Player {playerId + 1} move: {playerMove}");
 
                 // Validate the move within the Game class
                 bool validMove = game.IsValidMove(playerMove);
-
                 if (validMove)
                 {
+                    Console.WriteLine("Valid Move");
                     int movePosition = int.Parse(playerMove);
 
                     // Send the move to the other player (you will need to implement this)
