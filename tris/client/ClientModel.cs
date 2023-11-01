@@ -1,20 +1,29 @@
 ﻿using System;
+using System.Linq;
 
 namespace client
 {
     class ClientModel
     {
+        public char[] GameBoard { get; private set; }
         public string Player1Name { get; private set; }
         public string Player2Name { get; private set; }
-
-        private char[] board = new char[9];
+        public bool IsGameActive { get; private set; }
 
         public ClientModel()
         {
+            GameBoard = new char[9];
             for (int i = 0; i < 9; i++)
             {
-                board[i] = ' ';
+                GameBoard[i] = ' ';
             }
+            Player1Name = "Player 1";
+            Player2Name = "Player 2";
+            IsGameActive = true;
+        }
+        public char[] GetBoard()
+        {
+            return GameBoard;
         }
 
         public void UpdateBoard(string gameState)
@@ -27,34 +36,60 @@ namespace client
 
             for (int i = 0; i < 9; i++)
             {
-                board[i] = gameState[i];
+                GameBoard[i] = gameState[i];
             }
         }
 
-        public char[] GetBoard()
+        public void RestartGame()
         {
-            return board;
+            for (int i = 0; i < 9; i++)
+            {
+                GameBoard[i] = ' ';
+            }
+            IsGameActive = true;
+        }
+
+        public void ResetGame()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                GameBoard[i] = ' ';
+            }
+            IsGameActive = true;
+            Player1Name = "Player 1";
+            Player2Name = "Player 2";
+        }
+
+        public void SetPlayerNames(string player1, string player2)
+        {
+            Player1Name = player1;
+            Player2Name = player2;
+        }
+
+        public bool IsValidMove(string move)
+        {
+            return int.TryParse(move, out int position) && position >= 0 && position < 9 && GameBoard[position] == ' ';
         }
 
         public bool IsGameOver()
         {
             // Check for a win or draw
-            return CheckWin('X') || CheckWin('O') || !Array.Exists(board, c => c != ' ');
+            return CheckWin('X') || CheckWin('O') || !GameBoard.Contains(' ');
         }
 
         private bool CheckWin(char playerSymbol)
         {
             for (int i = 0; i < 3; i++)
             {
-                if ((board[i] == playerSymbol && board[i + 3] == playerSymbol && board[i + 6] == playerSymbol) ||
-                    (board[i * 3] == playerSymbol && board[i * 3 + 1] == playerSymbol && board[i * 3 + 2] == playerSymbol))
+                if ((GameBoard[i] == playerSymbol && GameBoard[i + 3] == playerSymbol && GameBoard[i + 6] == playerSymbol) ||
+                    (GameBoard[i * 3] == playerSymbol && GameBoard[i * 3 + 1] == playerSymbol && GameBoard[i * 3 + 2] == playerSymbol))
                 {
                     return true;
                 }
             }
 
-            if ((board[0] == playerSymbol && board[4] == playerSymbol && board[8] == playerSymbol) ||
-                (board[2] == playerSymbol && board[4] == playerSymbol && board[6] == playerSymbol))
+            if ((GameBoard[0] == playerSymbol && GameBoard[4] == playerSymbol && GameBoard[8] == playerSymbol) ||
+                (GameBoard[2] == playerSymbol && GameBoard[4] == playerSymbol && GameBoard[6] == playerSymbol))
             {
                 return true;
             }

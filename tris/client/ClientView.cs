@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace client
 {
@@ -14,28 +13,23 @@ namespace client
         {
             ClearConsole();
 
-            // Display player names at the top
-            //Console.WriteLine($"Player 1: {ClientModel.Player1Name}  |  Player 2: {ClientModel.Player2Name}\n");
-            Console.WriteLine($"Player 1  |  Player 2");
+            // Display the game board
+            Console.WriteLine("Tic-Tac-Toe Game\n");
+            Console.WriteLine("  1 | 2 | 3 ");
+            Console.WriteLine(" ---|---|---");
+            Console.WriteLine($"  4 | 5 | 6 ");
+            Console.WriteLine(" ---|---|---");
+            Console.WriteLine($"  7 | 8 | 9 ");
+            Console.WriteLine("\nCurrent Game Board:");
 
-            // Create a larger game board
-            for (int row = 0; row < 3; row++)
+            for (int i = 0; i < 9; i++)
             {
-                for (int col = 0; col < 3; col++)
-                {
-                    char cell = board[row * 3 + col];
-                    string cellValue = cell == ' ' ? " " : cell.ToString();
-                    Console.Write($"  {cellValue}  ");
-                    if (col < 2)
-                        Console.Write("|");
-                }
-                Console.WriteLine();
-                if (row < 2)
-                {
-                    Console.WriteLine("-----|-----|-----");
-                }
+                Console.Write($" {board[i]} ");
+                if (i % 3 == 2)
+                    Console.WriteLine(i == 8 ? "\n" : "\n ---|---|---");
+                else
+                    Console.Write("|");
             }
-            Console.WriteLine();
         }
 
         public static void DisplayMessage(string message)
